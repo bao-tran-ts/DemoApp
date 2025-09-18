@@ -1,0 +1,14 @@
+name: backend
+replicaCount: 1
+image: demoapp-backend:latest
+nodeSelector: {app: demoapp-backend}
+ingress:
+  path: /backend
+service:
+  type: ClusterIP
+postgres:
+  host: "postgres-postgresql"
+  port: "5432"
+  db: "postgres"
+  user: "postgres"
+  password: "yourpassword"

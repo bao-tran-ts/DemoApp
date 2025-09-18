@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Name List App</title>
+  <script>
+    async function addName() {
+      const name = document.getElementById('nameInput').value;
+      if (!name.trim()) return;
+      
+      try {
+        const response = await fetch('/api/names', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: name.trim() })
+        });
+        
+        if (response.ok) {
+          document.getElementById('nameInput').value = '';
+          loadNames();
+        } else {
+          console.error('Failed to add name:', response.statusText);
+        }
+      } catch (error) {
+        console.error('Error adding name:', error);
+      }
+    }
+    
+    async function loadNames() {
+      try {
+        const res = await fetch('/api/names');
+        const names = await res.json();
+        document.getElementById('namesList').innerHTML = names.map(n => `<li>${n}</li>`).join('');
+      } catch (error) {
+        console.error('Error loading names:', error);
+        document.getElementById('namesList').innerHTML = '<li style="color: red;">Failed to load names. Check console for errors.</li>';
+      }
+    }
+    
+    window.onload = loadNames;
+  </script>
+</head>
+<body>
+  <h1>Name List App</h1>
+  <input id="nameInput" type="text" placeholder="Enter name" />
+  <button onclick="addName()">Add Name</button>
+  <ul id="namesList"></ul>
+</body>
+</html>

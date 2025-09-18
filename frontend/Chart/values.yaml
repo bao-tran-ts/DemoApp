@@ -1,0 +1,8 @@
+name: frontend
+replicaCount: 1
+image: demoapp-frontend:latest
+nodeSelector: {app: demoapp-frontend}
+ingress:
+  path: /frontend
+service:
+  type: NodePort
