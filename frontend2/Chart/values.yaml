@@ -1,6 +1,6 @@
 name: frontend2
 replicaCount: 1
-image: demoapp-frontend2:latest
+image: baotrants/demoapp-frontend2:latest
 nodeSelector: {app: demoapp-frontend}
 containerPort: 8080
 ingress:

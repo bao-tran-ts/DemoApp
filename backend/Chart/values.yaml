@@ -1,6 +1,6 @@
 name: backend
 replicaCount: 1
-image: demoapp-backend:latest
+image: baotrants/demoapp-backend:latest
 nodeSelector: {app: demoapp-backend}
 containerPort: 4000
 service:
