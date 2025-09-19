@@ -2,10 +2,10 @@ name: backend
 replicaCount: 1
 image: demoapp-backend:latest
 nodeSelector: {app: demoapp-backend}
-ingress:
-  path: /backend
+containerPort: 4000
 service:
-  type: ClusterIP
+  port: 80
+  targetPort: 4000
 postgres:
   host: "postgres-postgresql"
   port: "5432"

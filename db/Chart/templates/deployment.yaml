@@ -13,16 +13,16 @@ spec:
     metadata:
       labels:
         app: {{ .Values.name }}
-    nodeSelector:
-      {{- with .Values.nodeSelector }}
-      {{ toYaml . | nindent 8 }}
-      {{- end }}
     spec:
+      nodeSelector:
+        {{- with .Values.nodeSelector }}
+        {{ toYaml . | nindent 8 }}
+        {{- end }}
       containers:
       - name: {{ .Values.name }}-container
         image: {{ .Values.image }}
         ports:
-        - containerPort: 5432
+        - containerPort: {{ .Values.containerPort }}
         env:
         {{- with .Values.db.env }}
         {{- toYaml . | nindent 8 }}

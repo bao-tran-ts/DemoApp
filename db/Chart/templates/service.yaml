@@ -5,8 +5,8 @@ metadata:
   labels:
     app: {{ .Values.name }}
 spec:
-  ports:
-  - port: 5432
-    targetPort: 5432
   selector:
     app: {{ .Values.name }}
+  ports:
+  - port: {{ .Values.service.port }}
+    targetPort: {{ .Values.service.targetPort }}

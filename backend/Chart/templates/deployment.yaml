@@ -23,7 +23,7 @@ spec:
         image: {{ .Values.image }}
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 80
+        - containerPort: {{ .Values.containerPort }}
         env:
         - name: POSTGRES_HOST
           value: {{ .Values.postgres.host | quote }}
