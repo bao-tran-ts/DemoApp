@@ -1,0 +1,12 @@
+{
+  "name": "frontend2",
+  "version": "1.0.0",
+  "description": "Demo frontend for ingress, displays an image only",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

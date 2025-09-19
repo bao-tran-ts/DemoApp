@@ -1,7 +1,7 @@
 name: database
 replicaCount: 1
 image: postgres:15-alpine
-nodeSelector: {app: database}
+nodeSelector: {app2: database}
 db:
   env:
   - name: POSTGRES_PASSWORD

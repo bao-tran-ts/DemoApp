@@ -1,17 +1,17 @@
-name: frontend
+name: frontend2
 replicaCount: 1
-image: demoapp-frontend:latest
+image: demoapp-frontend2:latest
 nodeSelector: {app: demoapp-frontend}
-containerPort: 3000
+containerPort: 8080
 ingress:
   enabled: true
   annotations: {nginx.ingress.kubernetes.io/rewrite-target: /}
   hosts:
-    - host: frontend.local
+    - host: frontend2.local
       paths:
-        - path: /
+        - path: /fe2
           pathType: Prefix
 service:
   port: 8080
-  targetPort: 3000
+  targetPort: 8080
 tls: []
