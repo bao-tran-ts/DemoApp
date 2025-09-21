@@ -13,11 +13,11 @@ spec:
     metadata:
       labels:
         app: {{ .Values.name }}
-    nodeSelector:
-      {{- with .Values.nodeSelector }}
-      {{ toYaml . | nindent 8 }}
-      {{- end }}
     spec:
+      nodeSelector:
+        {{- with .Values.nodeSelector }}
+        {{ toYaml . | nindent 8 }}
+        {{- end }}
       containers:
       - name: {{ .Values.name }}-container
         image: {{ .Values.image }}

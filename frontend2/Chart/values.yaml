@@ -7,7 +7,7 @@ ingress:
   enabled: true
   annotations: {nginx.ingress.kubernetes.io/rewrite-target: /}
   hosts:
-    - host: frontend2.local
+    - host: frontend.local
       paths:
         - path: /fe2
           pathType: Prefix
