@@ -8,7 +8,7 @@ ingress:
   annotations: {nginx.ingress.kubernetes.io/rewrite-target: /}
   paths:
     - path: /fe2
-      pathType: Prefix
+      pathType: Exact
 service:
   port: 8080
   targetPort: 8080
