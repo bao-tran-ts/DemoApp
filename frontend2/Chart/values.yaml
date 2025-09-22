@@ -6,11 +6,9 @@ containerPort: 8080
 ingress:
   enabled: true
   annotations: {nginx.ingress.kubernetes.io/rewrite-target: /}
-  hosts:
-    - host: frontend.local
-      paths:
-        - path: /fe2
-          pathType: Prefix
+  paths:
+    - path: /fe2
+      pathType: Prefix
 service:
   port: 8080
   targetPort: 8080

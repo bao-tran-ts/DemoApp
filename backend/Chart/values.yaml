@@ -7,7 +7,7 @@ service:
   port: 80
   targetPort: 4000
 postgres:
-  host: "postgres-postgresql"
+  host: "database-service"
   port: "5432"
   db: "postgres"
   user: "postgres"
