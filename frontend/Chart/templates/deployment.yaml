@@ -21,6 +21,6 @@ spec:
       containers:
       - name: {{ .Values.name }}-container
         image: {{ .Values.image }}
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
         - containerPort: {{ .Values.containerPort }}
