@@ -9,6 +9,7 @@ ingress:
   paths:
     - path: /fe2
       pathType: Exact
+  host: demoapp.local
   className: nginx
 service:
   port: 8080

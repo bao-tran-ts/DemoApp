@@ -9,6 +9,7 @@ ingress:
   paths:
     - path: /
       pathType: Prefix
+  host: demoapp.local
   className: nginx
 service:
   port: 8080
